@@ -10,8 +10,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: sans-serif;
-    background-color: #D9E6F6;
-  }
+    background-image: linear-gradient(to right top, #d16ba5, #cb86c4, #c3a0da, #c0b8e9, #c4cdf1, #bfcdef, #baceed, #b6ceea, #9abde1, #7dacd8, #5c9bce, #308bc5);
+    }
 
   #__next {
     display: flex;

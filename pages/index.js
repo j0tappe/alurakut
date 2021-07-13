@@ -26,8 +26,8 @@ export default function Home() {
   const githubUser = 'j0tappe';
   const [comunidades, setComunidades] = React.useState([{
     id: '12802378123789378912789789123896123', 
-    title: 'Eu odeio acordar cedo',
-    image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg'
+    title: 'Meu nome é link, não Zelda',
+    image: 'https://i.kym-cdn.com/photos/images/newsfeed/000/968/895/06c.gif'
   }]);
   const pessoasFavoritas = [
     'HelioLuna', 
