@@ -30,12 +30,12 @@ export default function Home() {
     image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg'
   }]);
   const pessoasFavoritas = [
-    'juunegreiros', 
-    'omariosouto', 
-    'peas', 
-    'rafaballerini', 
-    'marcobrunodev',
-    'felipefialho',
+    'HelioLuna', 
+    'karenngomes', 
+    'robertobdev', 
+    'pedroaraujo20', 
+    'CarlosWGama',
+    'igoortc',
   ]
 
   return (
