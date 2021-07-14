@@ -24,11 +24,24 @@ function ProfileSidebar(props) {
 
 export default function Home() {
   const githubUser = 'j0tappe';
-  const [comunidades, setComunidades] = React.useState([{
-    id: '12802378123789378912789789123896123', 
+  const [comunidades, setComunidades] = React.useState([
+    {
+    id: '1', 
     title: 'Meu nome é link, não Zelda',
     image: 'https://i.kym-cdn.com/photos/images/newsfeed/000/968/895/06c.gif'
-  }]);
+    },
+    {
+      id: '2', 
+      title: 'Emo is not dead',
+      image: 'https://i.pinimg.com/originals/e7/33/97/e73397721852b661530198235380e388.jpg'
+    },
+    {
+      id: '3', 
+      title: 'E eu que fui emo?',
+      image: 'https://s2.glbimg.com/aAZXpG_6GAd-2CUg3VFdd7hrhNk=/smart/e.glbimg.com/og/ed/f/original/2017/02/02/guilhermezaiden2.jpg'
+    },
+
+  ]);
   const pessoasFavoritas = [
     'HelioLuna', 
     'karenngomes', 
