@@ -4,7 +4,7 @@
 
 Projeto desenvolvido na 3ª Imersão React da [Alura](https://www.alura.com.br/).
 
-## 🧩 Acompanha o desenvolvimento do projeto
+## 🧩 Acompanhe o desenvolvimento do projeto
 
 - **[Clicando aqui](https://alurakut-smoky.vercel.app/)**
 
