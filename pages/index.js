@@ -22,6 +22,28 @@ function ProfileSidebar(props) {
   )
 }
 
+function ProfileRelationsBox(props) {
+  return (
+    <ProfileRelationsBoxWrapper>
+            <h2 className="smallTitle">
+              {props.title} ({props.items.length})
+            </h2> 
+            <ul>
+            {/*followers.map((itemAtual) => {
+                  return (
+                    <li key={itemAtual}>
+                      <a href={`http://github.com/${itemAtual}.png`}>
+                       <img src={itemAtual.image} />
+                        <span>{itemAtual.title}</span>
+                      </a>
+                  </li>
+                  )
+                })*/}  
+              </ul>     
+            </ProfileRelationsBoxWrapper>
+  )
+}
+
 export default function Home() {
   const githubUser = 'j0tappe';
   const [comunidades, setComunidades] = React.useState([
@@ -50,6 +72,18 @@ export default function Home() {
     'CarlosWGama',
     'igoortc',
   ]
+
+  const [followers, setFollowers] = React.useState([]);
+
+  React.useEffect(function() {
+    fetch('https://api.github.com/users/j0tappe/followers')
+    .then(function (respostaDoServidor) {
+      return respostaDoServidor.json();
+    })
+    .then(function (respostaCompleta) {
+      setFollowers(respostaCompleta);
+    })
+  }, [])
 
   return (
     <>
@@ -111,6 +145,7 @@ export default function Home() {
             </Box>
           </div>
           <div  className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
+            <ProfileRelationsBox title="Seguidores" items={followers} />
             <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
               Comunidades ({comunidades.length})
