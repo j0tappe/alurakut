@@ -20,7 +20,7 @@ function Link({ href, children, ...props }) {
 // ================================================================================================================
 // Menu
 // ================================================================================================================
-export function AlurakutMenu({ githubUser }) {
+export function AlurakutMenu({githubUser}) {
   const [isMenuOpen, setMenuState] = React.useState(false);
   return (
     <AlurakutMenu.Wrapper isMenuOpen={isMenuOpen}>
@@ -261,11 +261,11 @@ export function OrkutNostalgicIconSet(props) {
         </li>
       ))}
       {[
-        { name: 'Confiável', slug: 'confiavel', icon: 'smile' },
-        { name: 'Legal', slug: 'legal', icon: 'cool' },
-        { name: 'Sexy', slug: 'sexy', icon: 'heart' },
+        { name: 'Confiável', slug: 3, icon: 'smile' },
+        { name: 'Legal', slug: 2, icon: 'cool' },
+        { name: 'Sexy', slug: 1, icon: 'heart' },
       ].map(({ name, slug, icon }) => {
-        const total = props[slug] ? props[slug] : 2;
+        const total = slug ? slug : 3;
         return (
           <li key={`orkut__icon_set__${slug}`}>
             <span className="OrkutNostalgicIconSet__title">
@@ -273,7 +273,7 @@ export function OrkutNostalgicIconSet(props) {
             </span>
             <span className="OrkutNostalgicIconSet__iconComplex" className="OrkutNostalgicIconSet__number" style={{ gridArea: 'number' }}>
               {[0, 1, 2].map((_, index) => {
-                const isHeartActive = index <= (total - 2);
+                const isHeartActive = index <= (total - 1);
                 return <img key={`orkut__icon_set__${slug}_img_${index}`} src={`https://alurakut.vercel.app/icons/${icon}.svg`} style={{ marginRight: '2px', opacity: isHeartActive ? 1 : '0.5' }} />
               })}
             </span>
