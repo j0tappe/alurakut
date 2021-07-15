@@ -47,23 +47,7 @@ function ProfileRelationsBox(props) {
 export default function Home() {
   const githubUser = 'j0tappe';
   const [comunidades, setComunidades] = React.useState([
-    {
-    id: '1', 
-    title: 'Meu nome é link, não Zelda',
-    image: 'https://i.kym-cdn.com/photos/images/newsfeed/000/968/895/06c.gif'
-    },
-    {
-      id: '2', 
-      title: 'Emo is not dead',
-      image: 'https://i.pinimg.com/originals/e7/33/97/e73397721852b661530198235380e388.jpg'
-    },
-    {
-      id: '3', 
-      title: 'E eu que fui emo?',
-      image: 'https://s2.glbimg.com/aAZXpG_6GAd-2CUg3VFdd7hrhNk=/smart/e.glbimg.com/og/ed/f/original/2017/02/02/guilhermezaiden2.jpg'
-    },
-
-  ]);
+     ]);
   const pessoasFavoritas = [
     'HelioLuna', 
     'karenngomes', 
@@ -83,11 +67,38 @@ export default function Home() {
     .then(function (respostaCompleta) {
       setFollowers(respostaCompleta);
     })
+
+    // API GraphQL
+    fetch('https://graphql.datocms.com/', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'a6611c2a090121356c950c772b3296',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({ "query": `query {
+          allCommunities {
+            title
+            id
+            imageUrl
+            creatorSlug
+        }
+      }` })
+    })
+
+    .then((response) => response.json())
+    .then((respostaCompleta) => {
+      const comunidadesDATO = respostaCompleta.data.allCommunities;
+      console.log(comunidadesDATO)
+      setComunidades(comunidadesDATO)      
+    })
   }, [])
 
   return (
     <>
+        <title>emokut®</title>
         < AlurakutMenu githubUser={githubUser}/>
+        
         <MainGrid>
           <div className="profileArea" style={{ gridArea: 'profileArea' }}>
             <ProfileSidebar githubUser={githubUser}/>
@@ -103,24 +114,34 @@ export default function Home() {
 
             <Box>
               <h2 className="subTitle">O que você deseja fazer?</h2>
-              <form onSubmit={function handleCriaComunidade(event) {
-                event.preventDefault();
-                const dadosForm = new FormData(event.target);
+              <form onSubmit={function handleCriaComunidade(e) {
+                e.preventDefault();
+                const dadosDoForm = new FormData(event.target);
 
-                
-                console.log('Campo: ', dadosForm.get('title'));
-                console.log('Campo: ', dadosForm.get('image'));
+                console.log('Campo: ', dadosDoForm.get('title'));
+                console.log('Campo: ', dadosDoForm.get('image'));
 
                 const comunidade = {
-                  id: new Date().toISOString(),
                   title: dadosDoForm.get('title'),
-                  image: dadosDoForm.get('image'),
+                  imageUrl: dadosDoForm.get('image'),
+                  creatorSlug: githubUser,
                 }
 
-                const comunidadesAtualizadas = [...comunidades, comunidade];
-                setComunidades(comunidadesAtualizadas);                
-              }}>
-
+                fetch('/api/comunitie', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(comunidade)
+                })
+                .then(async (response) => {
+                  const dados = await response.json();
+                  console.log(dados.registroCriado);
+                  const comunidade = dados.registroCriado;
+                  const comunidadesAtualizadas = [...comunidades, comunidade];
+                  setComunidades(comunidadesAtualizadas)
+                })
+            }}>
                 <div>
                   <input 
                     placeholder="Qual vai ser o nome da sua comunidade?" 
@@ -154,8 +175,8 @@ export default function Home() {
                 {comunidades.map((itemAtual) => {
                   return (
                     <li key={itemAtual.id}>
-                      <a href={`/users/${itemAtual.title}`}>
-                       <img src={itemAtual.image} />
+                      <a href={`/comunities/${itemAtual.id}`}>
+                       <img src={itemAtual.imageUrl} />
                         <span>{itemAtual.title}</span>
                       </a>
                   </li>
