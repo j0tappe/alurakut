@@ -1,5 +1,6 @@
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
-import { AlurakutStyles } from '../src/lib/AlurakutCommons'
+import Head from 'next/head';
+import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { AlurakutStyles } from "../src/lib/AlurakutCommons";
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -23,21 +24,25 @@ const GlobalStyle = createGlobalStyle`
   }
   
   ${AlurakutStyles}
-`
+`;
 
 const theme = {
   colors: {
-    primary: '#0070f3',
+    primary: "#0070f3",
   },
-}
+};
 
 export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
+        <Head>
+          <title>emokut®</title>
+          <link rel="icon" href="../logo-favicon.ico" />         
+        </Head>
         <Component {...pageProps} />
       </ThemeProvider>
     </>
-  )
+  );
 }

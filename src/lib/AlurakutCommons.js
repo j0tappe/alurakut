@@ -25,7 +25,7 @@ export function AlurakutMenu({githubUser}) {
   return (
     <AlurakutMenu.Wrapper isMenuOpen={isMenuOpen}>
       <div className="container">
-        <AlurakutMenu.Logo src={`${BASE_URL}/logo.svg`} />
+        <AlurakutMenu.Logo src="https://i.ibb.co/zfRb49G/emokut-logo.png" />
 
         <nav style={{ flex: 1 }}>
           {[{ name: 'Inicio', slug: '/'}, {name: 'Amigos', slug: '/amigos'}, {name: 'Comunidades', slug: '/comunidades'}].map((menuItem) => (
@@ -140,7 +140,7 @@ AlurakutMenu.Wrapper = styled.header`
       }
     }
     input {
-      color: #ffffff;
+      color: #FFFFFF;
       background: #5579A1;
       padding: 10px 42px;
       border: 0;
