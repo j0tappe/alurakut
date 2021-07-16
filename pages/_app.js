@@ -7,18 +7,15 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
   body {
     font-family: sans-serif;
     background-image: linear-gradient(to right top, #d16ba5, #cb86c4, #c3a0da, #c0b8e9, #c4cdf1, #bfcdef, #baceed, #b6ceea, #9abde1, #7dacd8, #5c9bce, #308bc5);
     }
-
   #__next {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
   }
-
   img {
     max-width: 100%;
     height: auto;
