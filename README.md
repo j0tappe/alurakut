@@ -8,7 +8,8 @@ Projeto desenvolvido na 3ª Imersão React da [Alura](https://www.alura.com.br/)
 
 - **[Clicando aqui](https://alurakut-j0tappe.vercel.app/)**
 
-![Página inicial](https://user-images.githubusercontent.com/31297561/125619168-a7cce377-b844-4282-89b8-d9787538c40d.png)
+![Página inicial](https://user-images.githubusercontent.com/31297561/126018793-7cdb07a7-f6de-4746-bfb8-d8866ee83294.png)
+
 
 ## 🚀 Tecnologias
  - **[React](https://reactjs.org)**
