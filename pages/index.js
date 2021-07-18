@@ -63,6 +63,7 @@ export default function Home(props) {
   const [comunidades, setComunidades] = React.useState([]);
   const [followers, setFollowers] = React.useState([]);
   const [following, setFollowing] = React.useState([]);
+  //const [showMore, setshowMore] = React.useState(false);
 
   // Seguidores (API do Github)
   React.useEffect(function () {
@@ -110,6 +111,12 @@ export default function Home(props) {
     })
   }, [])
   
+ /*   // Ver mais
+    function handleShowMore(event) {
+      event.preventDefault();
+      setshowMore(!showMore)
+    }*/
+
   return (
     <>
       <AlurakutMenu githubUser={githubUser} />

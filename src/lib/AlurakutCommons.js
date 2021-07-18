@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import NextLink from 'next/link';
-import emokutLogo from '../assets/images/emokut-logo.png';
 
 const BASE_URL = 'http://alurakut.vercel.app/';
 const v = '1';
@@ -40,7 +39,7 @@ export function AlurakutMenu({githubUser}) {
             Sair
           </a>
           <div>
-            <input placeholder="Pesquisar no Orkut" />
+            <input placeholder="Pesquisar no emokut" />
           </div>
         </nav>
 
@@ -55,7 +54,8 @@ export function AlurakutMenu({githubUser}) {
 }
 AlurakutMenu.Wrapper = styled.header`
   width: 100%;
-  background-color: #308BC5;
+  background-color: #2D3441;
+    
   .alurakutMenuProfileSidebar {
     background: white;
     position: fixed;
@@ -81,7 +81,7 @@ AlurakutMenu.Wrapper = styled.header`
     }
     .boxLink {
       font-size: 18px;
-      color: #2E7BB4;
+      color: #d16ba5;
       -webkit-text-decoration: none;
       text-decoration: none;
       font-weight: 800;
@@ -94,7 +94,7 @@ AlurakutMenu.Wrapper = styled.header`
     }
   }
   .container {
-    background-color: #308BC5;
+    background-color: #2D3441;
     padding: 7px 16px;
     max-width: 1110px;
     margin: auto;
@@ -127,7 +127,7 @@ AlurakutMenu.Wrapper = styled.header`
         text-decoration: none;
         &:after {
           content: " ";
-          background-color: #5292C1;
+          background-color: #9d4edd;
           display: block;
           position: absolute;
           width: 1px;
@@ -141,7 +141,7 @@ AlurakutMenu.Wrapper = styled.header`
     }
     input {
       color: #FFFFFF;
-      background: #5579A1;
+      background: #14213d;
       padding: 10px 42px;
       border: 0;
       background-image: url(${`${BASE_URL}/icons/search.svg`});
@@ -157,7 +157,7 @@ AlurakutMenu.Wrapper = styled.header`
   }
 `;
 AlurakutMenu.Logo = styled.img`
-  background-color: #ffffff;
+  background-color: #000000;
   padding: 9px 14px;
   border-radius: 1000px;
   height: 34px;
@@ -223,7 +223,7 @@ export function AlurakutProfileSidebarMenuDefault() {
 AlurakutProfileSidebarMenuDefault.Wrapper = styled.div`
   a {
     font-size: 12px;
-    color: #2E7BB4;
+    color: #d16ba5;
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -323,10 +323,10 @@ OrkutNostalgicIconSet.List = styled.ul`
 const AlurakutLoginScreen = css`
   :root {
     --backgroundPrimary: #D9E6F6;
-    --backgroundSecondary: #F1F9FE;
+    --backgroundSecondary: #e5e5e5;
     --backgroundTertiary: #FFFFFF;
-    --backgroundQuarternary: #BBCDE8;
-    --colorPrimary: #2E7BB4;
+    --backgroundQuarternary: #f3c4fb;
+    --colorPrimary: #14213d;
     --colorSecondary: #388BB0;
     --colorTertiary: #2F4A71;
     --colorQuarternary: #D81D99;
