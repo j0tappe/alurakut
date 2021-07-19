@@ -15,8 +15,14 @@ Projeto desenvolvido na 3ª Imersão React da [Alura](https://www.alura.com.br/)
  - **[React](https://reactjs.org)**
  - **[Next.JS](https://nextjs.org/)**
  - **[Styled Components](https://styled-components.com/)**
+ - **[DatoCMS](https://www.datocms.com/)**
+ - **[GraphQL Request](https://github.com/prisma-labs/graphql-request)**
  - **[Nookies](https://www.npmjs.com/package/nookies)**
  - **[Jason Web Token](https://www.npmjs.com/package/jsonwebtoken)**
+
+## 🖌️ Layout
+
+- **[Figma](https://reactjs.org)**
 
 
 ## 💻 Instalação das dependências
