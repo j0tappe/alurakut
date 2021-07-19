@@ -4,8 +4,7 @@ Projeto desenvolvido na 3ª Imersão React da [Alura](https://www.alura.com.br/)
 
 ## 🧩 Sobre o projeto
 
-- Desenvolvido em React para criar uma versão do nostálgico Orkut. Este projeto tem como base o "Alurakut" e foi modificado e personalizado por mim, nomeado de *emokut*.
-- **[Clicando aqui](https://alurakut-j0tappe.vercel.app/)**
+- Desenvolvido em React para criar uma versão do nostálgico Orkut. Este projeto tem como base o "Alurakut" e foi modificado e personalizado por mim, nomeado de *emokut*. Você pode conferir como ficou o projeto acessando o deploy da aplicação **[clicando aqui.](https://alurakut-j0tappe.vercel.app/)**
 
 ![Página inicial](https://user-images.githubusercontent.com/31297561/126083020-f6c80f1c-68f4-4706-b7ea-cab8935fee31.png)
 
